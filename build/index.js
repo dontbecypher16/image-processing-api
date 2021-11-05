@@ -2,18 +2,30 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const axios = require('axios')
-const testing = require('../build/sharp-logic')
+const newImages = require('../build/sharp-logic')
 
-app.use(express.static('images'))
+
+// app.use(function (req, res, next) {
+//     res.setHeader(
+//       'Content-Security-Policy-Report-Only',
+//       "default-src 'self'; font-src 'self'; img-src 'self' localhost:3000; script-src 'self'; style-src 'self'; frame-src 'self'"
+//     );
+//     next();
+//   });
+
+app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
-app.get("/", (req, res) => {
+app.get("/", (req, res, next) => {
   res.send("Just a test");
+  next()
 });
 
 app.get("/data", (req, res) => {
-  res.json(testing);
+    //res.type('application/json')
+    //newData(([key, value]) => `${key}: ${value}`)
+    res.send(`${newImages}`)
 });
 
 
