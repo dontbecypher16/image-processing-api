@@ -2,16 +2,17 @@
   "name": "image-processing-api",
   "version": "1.0.0",
   "description": "An image placeholder to use when developing websites.",
-  "main": "build/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jasmine",
-    "prettier": "prettier --config .prettierrc '* .js' --write",
+    "prettier": "prettier \"src**/*.js\" --write",
     "lint": "eslint . --ext .js"
   },
   "author": "Richard Dixon",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "sharp": "^0.29.2"
   },
