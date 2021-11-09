@@ -1,22 +1,14 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const cors = require("cors");
-const axios = require("axios");
-const newImages = require("../build/sharp-logic");
+//const axios = require("axios");
+const imgfolder  = require("./sharp-logic");
 
-// app.use(function (req, res, next) {
-//     res.setHeader(
-//       'Content-Security-Policy-Report-Only',
-//       "default-src 'self'; font-src 'self'; img-src 'self' localhost:3000; script-src 'self'; style-src 'self'; frame-src 'self'"
-//     );
-//     next();
-//   });
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use("/data", cors());
+app.use(express.urlencoded({ extended: false }));
+
 
 app.get("/", (req, res, next) => {
   res.send("Just a test");
@@ -26,7 +18,22 @@ app.get("/", (req, res, next) => {
 app.get("/data", (req, res) => {
   //res.type('application/json')
   //newData(([key, value]) => `${key}: ${value}`)
-  res.json(`${newImages}`);
+  console.log(imgfolder)
+  let picname = req.query.picname
+  console.log(`imgfolder.fjord.${picname}`)
+
+
+  res.sendFile(imgfolder)
+  // for(let i = 0; i < imgfolder; i++){
+  //   //if(req.query.)
+  //   let filename = imgfolder[i] 
+  //   //console.log(filename)
+  //   return filename
+  // }
+  // res.render('data', {
+  //   if(filename[key] === )
+  // })
+
 });
 
 app.listen(port, () => {

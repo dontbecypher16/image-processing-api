@@ -2,11 +2,12 @@
   "name": "image-processing-api",
   "version": "1.0.0",
   "description": "An image placeholder to use when developing websites.",
-  "main": "src/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "jasmine",
     "prettier": "prettier \"src**/*.js\" --write",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "nodemon": "src/index.js"
   },
   "author": "Richard Dixon",
   "license": "ISC",
