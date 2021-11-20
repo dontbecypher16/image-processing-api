@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
     height = parseInt(heightStr)
   }
   res.type('image/jpeg')
-    imgFile( filename, width, height)//.pipe(res)
-    //console.log(imgFile)
+  imgFile( filename, width, height).pipe(res)
+  //console.log(imgFile)
 })
 
 
