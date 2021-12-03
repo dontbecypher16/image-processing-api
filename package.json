@@ -2,13 +2,13 @@
   "name": "image-processing-api",
   "version": "1.0.0",
   "description": "An image placeholder to use when developing websites.",
-  "main": "./src/index.js",
+  "main": "./src/index.ts",
   "scripts": {
     "build": "npx tsc",
     "jasmine": "jasmine",
     "prettier": "prettier \"src**/*.ts\" --write",
     "lint": "eslint . --ext .js, .ts",
-    "nodemon": "src/index.js",
+    "nodemon": "src/index.ts",
     "test": "npm run build && npm run jasmine"
   },
   "author": "Richard Dixon",

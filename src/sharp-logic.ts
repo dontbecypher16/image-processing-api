@@ -3,9 +3,9 @@ import sharp from 'sharp'
 
 
 
- function imgFile(filename: string, width: number, height: number) {
-  try {
-    const transform  = sharp(`public/images/${filename}.jpg`)
+ export default function imgFile(filename: string, width: number, height: number) {
+    try {
+    const transform = sharp(`public/images/${filename}.jpg`)
       .resize(width, height)
     transform
       .clone()
@@ -18,4 +18,3 @@ import sharp from 'sharp'
 }
 
 
-export default { imgFile }
