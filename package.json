@@ -2,12 +2,14 @@
   "name": "image-processing-api",
   "version": "1.0.0",
   "description": "An image placeholder to use when developing websites.",
-  "main": "./src/index.js",
+  "main": "./src/index.ts",
   "scripts": {
-    "test": "jasmine",
-    "prettier": "prettier \"src**/*.js\" --write",
-    "lint": "eslint . --ext .js",
-    "nodemon": "src/index.js"
+    "build": "npx tsc",
+    "jasmine": "jasmine",
+    "prettier": "prettier \"src**/*.ts\" --write",
+    "lint": "eslint . --ext .js, .ts",
+    "nodemon": "src/index.ts",
+    "test": "npm run build && npm run jasmine"
   },
   "author": "Richard Dixon",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "@types/express": "^4.17.13",
     "@types/jasmine": "^3.10.1",
     "@types/node": "^16.11.6",
+    "@types/sharp": "^0.29.4",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",

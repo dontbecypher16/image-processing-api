@@ -1,0 +1,35 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": 2021
+  },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error"
+    // to enforce using type for object type definitions, can be type or interface 
+    //"@typescript-eslint/consistent-type-definitions": ["error", "type"]
+
+    // "node/exports-style": ["error", "module.exports"],
+    // "node/file-extension-in-import": ["error", "always"],
+    // "node/prefer-global/buffer": ["error", "always"],
+    // "node/prefer-global/console": ["error", "always"],
+    // "node/prefer-global/process": ["error", "always"],
+    // "node/prefer-global/url-search-params": ["error", "always"],
+    // "node/prefer-global/url": ["error", "always"],
+    // "node/prefer-promises/dns": "error",
+    // "node/prefer-promises/fs": "error"
+  }
+}
