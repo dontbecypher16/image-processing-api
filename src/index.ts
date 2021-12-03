@@ -11,24 +11,15 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
+
 app.get('/', (req: express.Request, res: express.Response): void => {
-  let widthStr = req.query.width 
-  let heightStr = req.query.height 
-  let filename = req.query.filename
-  
-  let width
-  let height
-  if (widthStr) {
-    width = widthStr 
-    
-  }
-  if (heightStr) {
-    height = heightStr 
-  }
+  const width = Number(req.query.width)
+  const height= Number(req.query.height)
+  const filename = req.query.filename
  
  
   res.type('image/jpeg')
-  imgFile(filename as string, width as string, height)?.pipe(res)
+  imgFile(filename as string, width, height)?.pipe(res)
   //imgFile(filename, width, height).pipe(res) 
   //console.log(imgFile)
 })
