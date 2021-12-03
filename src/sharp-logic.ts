@@ -3,7 +3,7 @@ import sharp from 'sharp'
 
 
 
- export default function imgFile(filename?: string, width?: number, height?: number) {
+ export default function imgFile(filename: string, width: number, height: number) {
     try {
     const transform = sharp(`public/images/${filename}.jpg`)
       .resize(width, height)
