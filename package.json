@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "jasmine": "jasmine",
     "prettier": "prettier \"src**/*.ts\" --write",
-    "lint": "eslint . --ext .js, .ts",
+    "lint": "eslint . --ext .ts",
     "nodemon": "src/index.ts",
     "test": "npm run build && npm run jasmine"
   },
