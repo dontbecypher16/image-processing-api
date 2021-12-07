@@ -1,10 +1,10 @@
 {
-  "spec_dir": "spec",
+  "spec_dir": "build/tests",
   "spec_files": [
-    "**/*[Ss]pec.?(m)ts"
+    "**/*[Ss]pec.js"
   ],
   "helpers": [
-    "helpers/**/*.?(m)ts"
+    "helpers/**/*.js"
   ],
   "stopSpecOnExpectationFailure": false,
   "random": true
