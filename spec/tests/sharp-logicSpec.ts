@@ -1,4 +1,4 @@
-import imgFile from '../../src/sharp-logic'
+//import imgFile from '../../src/sharp-logic'
 
 
 describe("Testing image resizing", () => {
