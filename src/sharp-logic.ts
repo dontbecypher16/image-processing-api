@@ -1,4 +1,5 @@
 import sharp from 'sharp'
+import path from 'path'
 
 export default function imgFile(
   filename: string,
@@ -6,11 +7,13 @@ export default function imgFile(
   height: number
 ) {
   try {
-    const transform = sharp(`public/images/${filename}.jpg`).resize(
+    const publicPath = path.join(process.cwd(), 'public')
+  
+    const transform = sharp(`${publicPath}/images/${filename}`).resize(
       width,
       height
-    )
-    transform.clone().toFile(`public/new-images/${filename}.jpg`)
+      )
+      transform.clone().toFile(`${publicPath}/new-images/${filename}`)
 
     return transform
   } catch (err) {

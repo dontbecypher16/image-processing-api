@@ -1,10 +1,11 @@
-//import imgFile from '../../src/sharp-logic'
+import imgFile from '../../src/sharp-logic'
 
 
 describe("Testing image resizing", () => {
-    it("gets proper data from endpointXXXX", () => {
+    it("gets proper data for query parameters", () => {
 
-        expect(true).toBeTrue()
+        const newFile = imgFile('santamonica.jpg', 400, 800)
+        return newFile  
         
     });
   });

@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
     var _a;
     var width = Number(req.query.width);
     var height = Number(req.query.height);
-    var filename = req.query.filename;
+    var filename = String(req.query.filename);
     res.type('image/jpeg');
     (_a = (0, sharp_logic_1.default)(filename, width, height)) === null || _a === void 0 ? void 0 : _a.pipe(res);
 });

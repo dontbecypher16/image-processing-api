@@ -4,10 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var sharp_1 = __importDefault(require("sharp"));
+var path_1 = __importDefault(require("path"));
 function imgFile(filename, width, height) {
     try {
-        var transform = (0, sharp_1.default)("public/images/" + filename + ".jpg").resize(width, height);
-        transform.clone().toFile("public/new-images/" + filename + ".jpg");
+        var publicPath = path_1.default.join(process.cwd(), 'public');
+        var transform = (0, sharp_1.default)(publicPath + "/images/" + filename).resize(width, height);
+        transform.clone().toFile(publicPath + "/new-images/" + filename);
         return transform;
     }
     catch (err) {

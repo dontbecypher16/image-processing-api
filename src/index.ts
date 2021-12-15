@@ -15,10 +15,11 @@ app.use(cache('5 minutes'))
 app.get('/', (req: express.Request, res: express.Response): void => {
   const width = Number(req.query.width)
   const height = Number(req.query.height)
-  const filename = req.query.filename
+  const filename = String(req.query.filename)
+
 
   res.type('image/jpeg')
-  imgFile(filename as string, width, height)?.pipe(res)
+  imgFile(filename, width, height)?.pipe(res)
 })
 
 app.listen(port, () => {
