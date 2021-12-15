@@ -10,6 +10,6 @@
 **npm run lint** - for eslint
 
 
-**Endpoint is GET "/"
+**Endpoint is GET "/"**
 **You can resize image values of width and height in url query parameters and new image will be in new directory**
 
