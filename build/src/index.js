@@ -8,7 +8,7 @@ var express_1 = __importDefault(require("express"));
 var sharp_logic_1 = __importDefault(require("./sharp-logic"));
 var apicache_1 = __importDefault(require("apicache"));
 var app = (0, express_1.default)();
-var port = 3000;
+var port = 4000;
 var cache = apicache_1.default.middleware;
 app.use(express_1.default.static(__dirname + '/public/images'));
 app.use(express_1.default.json());

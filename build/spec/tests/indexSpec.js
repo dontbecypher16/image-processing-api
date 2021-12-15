@@ -11,6 +11,6 @@ describe('Testing endpoint...', function () {
         return request
             .get('/')
             .query({ filename: 'santamonica.jpg', width: 500, height: 700 })
-            .expect(404);
+            .expect(200);
     });
 });

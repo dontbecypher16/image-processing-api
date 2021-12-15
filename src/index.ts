@@ -4,7 +4,7 @@ import imgFile from './sharp-logic'
 import apicache from 'apicache'
 
 const app = express()
-const port = 3000
+const port = 4000
 let cache = apicache.middleware
 
 app.use(express.static(__dirname + '/public/images'))
