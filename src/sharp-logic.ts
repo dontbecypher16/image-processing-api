@@ -10,6 +10,7 @@ export default function imgFile(
     const publicPath = path.join(process.cwd(), 'public', 'images', `${filename}`)
     const newPublicPath = path.join(process.cwd(), 'public', 'new-images', `${filename}`)
     console.log(publicPath)
+    console.log(newPublicPath)
   
     const transform = sharp(publicPath).resize(
       width,

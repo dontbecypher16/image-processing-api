@@ -10,6 +10,7 @@ function imgFile(filename, width, height) {
         var publicPath = path_1.default.join(process.cwd(), 'public', 'images', "" + filename);
         var newPublicPath = path_1.default.join(process.cwd(), 'public', 'new-images', "" + filename);
         console.log(publicPath);
+        console.log(newPublicPath);
         var transform = (0, sharp_1.default)(publicPath).resize(width, height);
         transform.clone().toFile(newPublicPath);
         return transform;
