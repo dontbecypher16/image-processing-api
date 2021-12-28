@@ -7,6 +7,6 @@ var sharp_logic_1 = __importDefault(require("../../src/sharp-logic"));
 describe("Testing image resizing", function () {
     it("gets proper data for query parameters", function () {
         var newFile = (0, sharp_logic_1.default)('santamonica.jpg', 400, 800);
-        return newFile;
+        expect(newFile).not.toBe(undefined);
     });
 });

@@ -16,6 +16,7 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cache('5 minutes'));
 app.get('/', function (req, res) {
     var _a;
+    console.log("something...");
     var width = Number(req.query.width);
     var height = Number(req.query.height);
     var filename = String(req.query.filename);

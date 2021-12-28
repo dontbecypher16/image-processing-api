@@ -1,11 +1,10 @@
-/* eslint-disable prefer-const */
 import express from 'express'
 import imgFile from './sharp-logic'
 import apicache from 'apicache'
 
 const app = express()
 const port = 4000
-let cache = apicache.middleware
+const cache = apicache.middleware
 
 app.use(express.static(__dirname + '/public/images'))
 app.use(express.json())

@@ -7,13 +7,15 @@ export default function imgFile(
   height: number
 ) {
   try {
-    const publicPath = path.join(process.cwd(), 'public')
+    const publicPath = path.join(process.cwd(), 'public', 'images', `${filename}`)
+    const newPublicPath = path.join(process.cwd(), 'public', 'new-images', `${filename}`)
+    console.log(publicPath)
   
-    const transform = sharp(`${publicPath}/images/${filename}`).resize(
+    const transform = sharp(publicPath).resize(
       width,
       height
       )
-      transform.clone().toFile(`${publicPath}/new-images/${filename}`)
+      transform.clone().toFile(newPublicPath)
 
     return transform
   } catch (err) {
