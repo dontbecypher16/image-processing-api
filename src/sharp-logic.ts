@@ -7,18 +7,21 @@ export default function imgFile(
   height: number
 ) {
   try {
-    const publicPath = path.join(process.cwd(), 'public', 'images', `${filename}`)
-    const newPublicPath = path.join(process.cwd(), 'public', 'new-images', `${filename}`)
-    console.log(publicPath)
-    console.log(newPublicPath)
-  
-    const transform = sharp(publicPath).resize(
-      width,
-      height
-      )
-      transform.clone().toFile(newPublicPath)
+    if(!isNaN(width) && !isNaN(height)){
 
-    return transform
+      const publicPath = path.join(process.cwd(), 'public', 'images', `${filename}`)
+      const newPublicPath = path.join(process.cwd(), 'public', 'new-images', `${filename}`)
+      console.log(publicPath)
+      console.log(newPublicPath)
+    
+      const transform = sharp(publicPath).resize(
+        width,
+        height
+        )
+        transform.clone().toFile(newPublicPath)
+  
+      return transform
+    }
   } catch (err) {
     console.log(`An error has occurred: ${err}`)
   }
