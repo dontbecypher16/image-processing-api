@@ -16,9 +16,14 @@ app.get('/', (req: express.Request, res: express.Response): void => {
   const height = Number(req.query.height)
   const filename = String(req.query.filename)
 
+  try {
+    res.type('image/jpeg')
+    imgFile(filename, width, height)?.pipe(res)
+  } catch (err) {
+    res.send(`An error has occurred: ${err}`)
+    console.log(`An error has occurred: ${err}`)
+  }
 
-  res.type('image/jpeg')
-  imgFile(filename, width, height)?.pipe(res)
 })
 
 app.listen(port, () => {
@@ -26,3 +31,4 @@ app.listen(port, () => {
 })
 
 export default app
+
