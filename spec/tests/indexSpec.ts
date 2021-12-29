@@ -8,7 +8,7 @@ describe('Testing endpoint...', () => {
  
     return request
       .get('/')
-      .query({ filename: 'santamonica.jpg'})
+      .query({ filename: 'santamonica.jpg', width: 500, height: 700})
       .expect(200)
    
   })

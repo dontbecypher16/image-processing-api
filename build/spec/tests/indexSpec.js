@@ -10,7 +10,7 @@ describe('Testing endpoint...', function () {
     it('gets proper data from endpoint', function () {
         return request
             .get('/')
-            .query({ filename: 'santamonica.jpg' })
+            .query({ filename: 'santamonica.jpg', width: 500, height: 700 })
             .expect(200);
     });
 });
